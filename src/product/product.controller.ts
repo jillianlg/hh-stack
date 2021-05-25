@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Header, HttpCode, Post, Put, Query, Req, Res } from '@nestjs/common';
+import { Controller, Delete, Get, Header, HttpCode, Post, Put, Query, Redirect, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Controller('product')
@@ -7,12 +7,20 @@ export class ProductController {
   // create(): string {
   //   return 'NEW PRODUCT END POINT';
   // }
-
   @HttpCode(204)
   @Header('Authorization', 'Bearer XADSASDASD##$#$ASDSASDAA')
   create(): string {
     return 'New Product Action';
   }
+
+  @Get('docs')
+  @Redirect('https://docs.nestjs.com', 302)
+  getDocs(@Query('version') version) {
+    if (version && version === '6') {
+      return { url: 'https://docs.nestjs.com/v6/' };
+    }
+  }
+
   @Get()
   findAll(
     @Req()
