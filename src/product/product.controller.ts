@@ -20,6 +20,11 @@ export class ProductController {
     return response.json({ msg: 'Find ALL' });
   }
 
+  @Get(':id')
+  findById(): string {
+    return 'Find by id';
+  }
+
   @Put()
   update(): string {
     return 'Update All';
