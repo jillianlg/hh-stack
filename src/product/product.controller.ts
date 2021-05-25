@@ -1,5 +1,5 @@
-import { Controller, Get, Req } from '@nestjs/common';
-import { Request } from 'express';
+import { Controller, Get, Req, Res } from '@nestjs/common';
+import { Request, Response } from 'express';
 
 @Controller('product')
 export class ProductController {
@@ -7,9 +7,11 @@ export class ProductController {
   findAll(
     @Req()
     request: Request,
-  ): string {
+    @Res()
+    response: Response,
+  ): any {
     console.log(request);
 
-    return 'Find ALL';
+    return response.json({ msg: 'Find ALL' });
   }
 }
