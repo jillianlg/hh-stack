@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Query, Req, Res } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put, Query, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Controller('product')
@@ -23,5 +23,10 @@ export class ProductController {
   @Put()
   update(): string {
     return 'Update All';
+  }
+
+  @Delete()
+  delete(): string {
+    return 'Delete All';
   }
 }
