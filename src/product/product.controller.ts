@@ -9,7 +9,7 @@ export class ProductController {
   // }
 
   @HttpCode(204)
-  @Header('Authorization', 'Bearer XADSASDASD##$#$')
+  @Header('Authorization', 'Bearer XADSASDASD##$#$ASDSASDAA')
   create(): string {
     return 'New Product Action';
   }
