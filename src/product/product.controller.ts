@@ -20,6 +20,11 @@ export class ProductController {
     return response.json({ msg: 'Find ALL' });
   }
 
+  @Get('ab*cd')
+  findByPattern(): string {
+    return 'Find by pattern';
+  }
+
   @Get(':id')
   findById(): string {
     return 'Find by id';
