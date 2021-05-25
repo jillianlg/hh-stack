@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Header, HttpCode, Post, Put, Query, Redirect, Req, Res } from '@nestjs/common';
+import { Controller, Delete, Get, Header, HttpCode, Param, Post, Put, Query, Redirect, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Controller('product')
@@ -40,8 +40,8 @@ export class ProductController {
   }
 
   @Get(':id')
-  findById(): string {
-    return 'Find by id';
+  findById(@Param() params): string {
+    return params;
   }
 
   @Put()
