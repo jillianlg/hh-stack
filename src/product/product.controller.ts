@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query, Req, Res } from '@nestjs/common';
+import { Controller, Get, Post, Put, Query, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Controller('product')
@@ -18,5 +18,10 @@ export class ProductController {
     console.log(query);
 
     return response.json({ msg: 'Find ALL' });
+  }
+
+  @Put()
+  update(): string {
+    return 'Update All';
   }
 }
