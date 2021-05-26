@@ -96,3 +96,11 @@ console.log(b);
 let b2: boolean = checker<number>(items, 5, 2); // true
 console.log(b2); 
 
+// Interface describing indexable
+interface States<R> {
+  [states: string]: R;
+}
+let s: States<boolean> = { enabled: true, maximized: false };
+console.log(s);
+console.log(s['maximized']);
+

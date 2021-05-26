@@ -54,3 +54,6 @@ var b = checker(items, 5, 1); // false
 console.log(b);
 var b2 = checker(items, 5, 2); // true
 console.log(b2);
+var s = { enabled: true, maximized: false };
+console.log(s);
+console.log(s['maximized']);
