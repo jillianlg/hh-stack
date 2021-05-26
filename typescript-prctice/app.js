@@ -68,4 +68,28 @@ myGenericNumber.zeroValue = 0;
 myGenericNumber.add = function (x, y) {
     return x + y;
 };
-console.log(myGenericNumber);
+var List = /** @class */ (function () {
+    function List() {
+        this.data = [];
+    }
+    List.prototype.add = function (t) {
+        this.data.push(t);
+    };
+    List.prototype.remove = function (t) {
+        var index = this.data.indexOf(t);
+        if (index > -1) {
+            this.data.splice(index, 1);
+        }
+    };
+    List.prototype.asArray = function () {
+        return this.data;
+    };
+    return List;
+}());
+var numbers = new List();
+numbers.add(11);
+numbers.add(12);
+numbers.add(13);
+numbers.remove(12);
+var numArray = numbers.asArray();
+console.log(numArray);
