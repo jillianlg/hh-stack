@@ -37,3 +37,11 @@ var p = { first: '10k', second: 1000 };
 console.log(p);
 var person = { first: 'Natasha', second: 'Lutzski' };
 console.log(person);
+var newObj = {
+    id: Math.random().toString(36),
+    run: function () {
+        return 3;
+    }
+};
+console.log(newObj.id);
+console.log(newObj.run());

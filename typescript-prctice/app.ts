@@ -60,3 +60,20 @@ console.log(p);
 const person: Pair<string, string> = {first: 'Natasha', second: 'Lutzski'};
 console.log(person);
 
+// Interface Command
+interface Command<T, R> {
+  id: T;
+  run(): R;
+}
+
+let newObj: Command<string, number> = {
+  id: Math.random().toString(36), //create a random ID number
+  run: function() {
+    return 3;
+  }
+};
+
+console.log(newObj.id);
+console.log(newObj.run());
+
+
