@@ -1,9 +1,9 @@
-function LoggerAndReturn(thing) {
-    return thing;
+function getArray(items) {
+    return new Array().concat(items);
 }
-var message = LoggerAndReturn('Hello World');
-var message2 = LoggerAndReturn(2);
-var message3 = LoggerAndReturn(true);
-console.log(message);
-console.log(message2);
-console.log(message3);
+var myNumArr = getArray([100, 200, 300]);
+var myStrArr = getArray(['Hello World']);
+var myBooArr = getArray([true, false]);
+console.log(myNumArr);
+console.log(myStrArr);
+console.log(myBooArr);
