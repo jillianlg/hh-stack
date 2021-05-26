@@ -150,3 +150,20 @@ numbers.remove(12);
 let numArray = numbers.asArray();
 console.log(numArray);
 
+// Using Decorators
+// A Decorator is a special kind of deceleration that can be attached to a
+//    class declaration, method, accessor, property, or parameter.
+// Decorators use the form @expression, where expression must evaluate to a function
+//    that will be called at runtime with information about the decorated declaration.
+
+function log(target, key, descriptor) {
+  console.log(`${key} was called`);
+}
+
+class Calculator {
+  // using the decorator @log
+  @log
+  square(n: number) {
+    return n * n;
+  }
+}
