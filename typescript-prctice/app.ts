@@ -45,3 +45,18 @@ let customer = new Customer('Jane', 'Doe')
 customerLogger(customer)
       // customerLogger('Jane Doe') results in an compiler error
       // customerLogger(1) results in an compiler error - type 1 is not an assignable parameter of Customer Type
+
+// Generic Interfaces describing Obj Properties
+  // An Interface is a group of related properties and methods that describe an object.
+  // An Interface does not implement or initialize the object.
+interface Pair<T, U> {
+  first: T;
+  second: U;
+}
+
+let p: Pair<string, number> = { first: '10k', second: 1000 };
+console.log(p);
+
+const person: Pair<string, string> = {first: 'Natasha', second: 'Lutzski'};
+console.log(person);
+

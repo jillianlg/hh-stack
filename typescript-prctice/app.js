@@ -26,9 +26,14 @@ var Customer = /** @class */ (function () {
     }
     return Customer;
 }());
-//<T extends Customer> adds the constraint to limit the customerLogger to taking in only the Customer Type
+// <T extends Customer> 
+// adds the constraint to limit the customerLogger to taking in only the Customer Type
 function customerLogger(customer) {
     console.log(customer.firstName + " " + customer.lastName);
 }
 var customer = new Customer('Jane', 'Doe');
 customerLogger(customer);
+var p = { first: '10k', second: 1000 };
+console.log(p);
+var person = { first: 'Natasha', second: 'Lutzski' };
+console.log(person);
