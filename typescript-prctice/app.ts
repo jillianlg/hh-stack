@@ -3,7 +3,7 @@ function getArray<T>(items: T[]): T[] {
 }
 
 let myNumArr = getArray([100, 200, 300]);
-let myStrArr = getArray(['Hello World']);
+let myStrArr = getArray(['Hello', 'World']);
 let myBooArr = getArray([true, false]);
 
 console.log(myNumArr);
