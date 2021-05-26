@@ -18,3 +18,17 @@ function displayType(id, name) {
     console.log(typeof id + ', ' + typeof name);
 }
 displayType(2, 'Malik'); // number, string
+// Generic Constraints
+var Customer = /** @class */ (function () {
+    function Customer(fname, lname) {
+        this.firstName = fname;
+        this.lastName = lname;
+    }
+    return Customer;
+}());
+//<T extends Customer> adds the constraint to limit the customerLogger to taking in only the Customer Type
+function customerLogger(customer) {
+    console.log(customer.firstName + " " + customer.lastName);
+}
+var customer = new Customer('Jane', 'Doe');
+customerLogger(customer);

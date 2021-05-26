@@ -24,3 +24,24 @@ function displayType<T>(id: T, name: string): void {
 }
 
 displayType(2, 'Malik'); // number, string
+
+// Generic Constraints
+class Customer {
+  firstName: string;
+  lastName: string;
+
+  constructor(fname: string, lname: string) {
+    this.firstName = fname;
+    this.lastName = lname;
+  }
+}
+    // <T extends Customer> 
+    // adds the constraint to limit the customerLogger to taking in only the Customer Type
+function customerLogger<T extends Customer>(customer: T): void {
+  console.log(`${customer.firstName} ${customer.lastName}`);
+}
+
+let customer = new Customer('Jane', 'Doe')
+customerLogger(customer)
+      // customerLogger('Jane Doe') results in an compiler error
+      // customerLogger(1) results in an compiler error - type 1 is not an assignable parameter of Customer Type
