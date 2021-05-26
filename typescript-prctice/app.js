@@ -57,3 +57,15 @@ console.log(b2);
 var s = { enabled: true, maximized: false };
 console.log(s);
 console.log(s['maximized']);
+// Creating a Generic Class
+var GenericNumber = /** @class */ (function () {
+    function GenericNumber() {
+    }
+    return GenericNumber;
+}());
+var myGenericNumber = new GenericNumber();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function (x, y) {
+    return x + y;
+};
+console.log(myGenericNumber);

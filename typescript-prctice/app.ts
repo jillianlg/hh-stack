@@ -104,3 +104,14 @@ let s: States<boolean> = { enabled: true, maximized: false };
 console.log(s);
 console.log(s['maximized']);
 
+// Creating a Generic Class
+class GenericNumber<T> {
+  zeroValue: T;
+  add: (x: T, y: T) => T;
+}
+
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function(x, y) {
+  return x + y;
+};
