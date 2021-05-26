@@ -17,3 +17,10 @@ function getInfo<T, U>(id: T, name: U): void {
 }
 
 getInfo<number, string>(1, 'Jane'); // number, string
+
+// Generic Function - Non Generic Type Variables
+function displayType<T>(id: T, name: string): void {
+  console.log(typeof id + ', ' + typeof name);
+}
+
+displayType(2, 'Malik'); // number, string
