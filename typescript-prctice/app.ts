@@ -76,4 +76,23 @@ let newObj: Command<string, number> = {
 console.log(newObj.id);
 console.log(newObj.run());
 
+// Define the Function Type inside the Interface
+interface ElementChecker {
+  <T>(items: T[], toBeChecked: T, atIndex: number): boolean;
+}
+
+function checkElementAt<T>(
+  items: T[],
+  toBeChecked: T,
+  atIndex: number
+): boolean {
+  return items[atIndex] === toBeChecked;
+}
+
+let checker: ElementChecker = checkElementAt;
+let items = [1, 3, 5, 7];
+let b: boolean = checker<number>(items, 5, 1); // false
+console.log(b); 
+let b2: boolean = checker<number>(items, 5, 2); // true
+console.log(b2); 
 
