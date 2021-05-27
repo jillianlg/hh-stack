@@ -111,37 +111,65 @@ var numArray = numbers.asArray();
 //   }
 // }
 // Using Arguments in Method Decorator
-function log(target, key, descriptor) {
-    // console.log(target);
-    var original = descriptor.value;
-    descriptor.value = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        // call original method
-        var result = original.apply(this, args);
-        // Log the call and the result
-        console.log(key + " with args " + JSON.stringify(args) + " returned " + JSON.stringify(result));
-        // return the result
-        return result;
+// function log(target, key, descriptor) {
+//   // console.log(target);
+//   const original = descriptor.value;
+//   descriptor.value = function(...args: any[]) {
+//     // call original method
+//     const result = original.apply(this, args);
+//     // Log the call and the result
+//     console.log(`${key} with args ${JSON.stringify(args)} returned ${JSON.stringify(result)}`);
+//     // return the result
+//     return result;
+//   };
+//   return descriptor;
+// }
+// class Calculator {
+//   // using the decorator @log
+//   @log
+//   square(n: number) {
+//     return n * n;
+//   }
+// }
+// const calculator = new Calculator();
+//   //  square with args [2] returned 4
+// calculator.square(2);
+//   //  square with args [3] returned 9
+// calculator.square(3);
+// Configuring Decorators using Decorator Factory
+function log(title) {
+    return function (target, key, descriptor) {
+        // console.log(target);
+        var original = descriptor.value;
+        descriptor.value = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            // call original method
+            var result = original.apply(this, args);
+            // Log the call and the result
+            console.log("title: " + title + " " + key + " with args " + JSON.stringify(args) + " returned " + JSON.stringify(result));
+            // return the result
+            return result;
+        };
+        return descriptor;
     };
-    return descriptor;
 }
 var Calculator = /** @class */ (function () {
     function Calculator() {
     }
-    // using the decorator @log
+    // using the decorator Factory Function
     Calculator.prototype.square = function (n) {
         return n * n;
     };
     __decorate([
-        log
+        log('Calculator')
     ], Calculator.prototype, "square", null);
     return Calculator;
 }());
 var calculator = new Calculator();
-// square with args [2] returned 4
+//  square with args [2] returned 4
 calculator.square(2);
-// square with args [3] returned 9
+//  square with args [3] returned 9
 calculator.square(3);
