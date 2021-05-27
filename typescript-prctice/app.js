@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 // let myNumArr = getArray([100, 200, 300]);
 // let myStrArr = getArray(['Hello', 'World']);
 // let myBooArr = getArray([true, false]);
@@ -235,29 +232,43 @@ function property(target, key) {
 //   // call the getter
 // console.log(person.firstName);
 ///////// ***** Using the Parameter Decorator ***** ///////// 
-function parameterDecorator(target, key, index) {
-    console.log("Key is " + key + " and index is " + index);
+// function parameterDecorator(target: any, key: string, index: number) {
+//   console.log(`Key is ${key} and index is ${index}`);
+// }
+// class Person {
+//   @property
+//   public firstName: string;
+//   @property
+//   public salary: number
+//   calculateSalary(
+//     @parameterDecorator taxes: number,
+//     @parameterDecorator discount: number
+//     ): number {
+//     return this.salary * taxes;
+//   }
+// }
+// const person = new Person()
+//   // set the firstName
+// person.firstName = 'Haider';
+//   // call the getter
+// console.log(person.firstName);
+///////// ***** Using the Class Decorator ***** /////////
+function model(constructor) {
+    console.log(constructor);
 }
 var Person = /** @class */ (function () {
     function Person() {
     }
-    Person.prototype.calculateSalary = function (taxes, discount) {
-        return this.salary * taxes;
-    };
     __decorate([
         property
     ], Person.prototype, "firstName", void 0);
-    __decorate([
-        property
-    ], Person.prototype, "salary", void 0);
-    __decorate([
-        __param(0, parameterDecorator),
-        __param(1, parameterDecorator)
-    ], Person.prototype, "calculateSalary", null);
+    Person = __decorate([
+        model
+    ], Person);
     return Person;
 }());
-var person = new Person();
-// set the firstName
-person.firstName = 'Haider';
-// call the getter
-console.log(person.firstName);
+// const person = new Person()
+//   // set the firstName
+// person.firstName = 'Haider';
+//   // call the getter
+// console.log(person.firstName);
