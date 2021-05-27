@@ -11,17 +11,17 @@ function getArray(items) {
 var myNumArr = getArray([100, 200, 300]);
 var myStrArr = getArray(['Hello', 'World']);
 var myBooArr = getArray([true, false]);
-console.log(myNumArr);
-console.log(myStrArr);
-console.log(myBooArr);
+// console.log(myNumArr);
+// console.log(myStrArr); 
+// console.log(myBooArr); 
 // Generic Function - Multiple Type Variables
 function getInfo(id, name) {
-    console.log((typeof id + ', ' + typeof name));
+    // console.log((typeof id + ', ' + typeof name));
 }
 getInfo(1, 'Jane'); // number, string
 // Generic Function - Non Generic Type Variables
 function displayType(id, name) {
-    console.log(typeof id + ', ' + typeof name);
+    // console.log(typeof id + ', ' + typeof name);
 }
 displayType(2, 'Malik'); // number, string
 // Generic Constraints
@@ -35,34 +35,30 @@ var Customer = /** @class */ (function () {
 // <T extends Customer> 
 // adds the constraint to limit the customerLogger to taking in only the Customer Type
 function customerLogger(customer) {
-    console.log(customer.firstName + " " + customer.lastName);
+    // console.log(`${customer.firstName} ${customer.lastName}`);
 }
 var customer = new Customer('Jane', 'Doe');
 customerLogger(customer);
 var p = { first: '10k', second: 1000 };
-console.log(p);
+// console.log(p);
 var person = { first: 'Natasha', second: 'Lutzski' };
-console.log(person);
 var newObj = {
     id: Math.random().toString(36),
     run: function () {
         return 3;
     }
 };
-console.log(newObj.id);
-console.log(newObj.run());
 function checkElementAt(items, toBeChecked, atIndex) {
     return items[atIndex] === toBeChecked;
 }
 var checker = checkElementAt;
 var items = [1, 3, 5, 7];
 var b = checker(items, 5, 1); // false
-console.log(b);
+// console.log(b); 
 var b2 = checker(items, 5, 2); // true
-console.log(b2);
 var s = { enabled: true, maximized: false };
-console.log(s);
-console.log(s['maximized']);
+// console.log(s);
+// console.log(s['maximized']);
 // Creating a Generic Class
 var GenericNumber = /** @class */ (function () {
     function GenericNumber() {
@@ -98,14 +94,39 @@ numbers.add(12);
 numbers.add(13);
 numbers.remove(12);
 var numArray = numbers.asArray();
-console.log(numArray);
+// console.log(numArray);
 // Using Decorators
 // A Decorator is a special kind of deceleration that can be attached to a
 //    class declaration, method, accessor, property, or parameter.
 // Decorators use the form @expression, where expression must evaluate to a function
 //    that will be called at runtime with information about the decorated declaration.
+// function log(target, key, descriptor) {
+//   console.log(`${key} was called`);
+// }
+// class Calculator {
+//   // using the decorator @log
+//   @log
+//   square(n: number) {
+//     return n * n;
+//   }
+// }
+// Using Arguments in Method Decorator
 function log(target, key, descriptor) {
-    console.log(key + " was called");
+    // console.log(target);
+    var original = descriptor.value;
+    descriptor.value = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        // call original method
+        var result = original.apply(this, args);
+        // Log the call and the result
+        console.log(key + " with args " + JSON.stringify(args) + " returned " + JSON.stringify(result));
+        // return the result
+        return result;
+    };
+    return descriptor;
 }
 var Calculator = /** @class */ (function () {
     function Calculator() {
@@ -119,3 +140,8 @@ var Calculator = /** @class */ (function () {
     ], Calculator.prototype, "square", null);
     return Calculator;
 }());
+var calculator = new Calculator();
+// square with args [2] returned 4
+calculator.square(2);
+// square with args [3] returned 9
+calculator.square(3);
