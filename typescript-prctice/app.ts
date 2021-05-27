@@ -1,4 +1,4 @@
-/////// Generic Function - T Array Type ///////// 
+///////// ***** Generic Function - T Array Type ***** ///////// 
 // function getArray<T>(items: T[]): T[] {
 //   return new Array<T>().concat(items);
 // }
@@ -11,21 +11,21 @@
 // console.log(myStrArr); 
 // console.log(myBooArr); 
 
-///////// Generic Function - Multiple Type Variables ///////// 
+///////// ***** Generic Function - Multiple Type Variables ***** /////////
 // function getInfo<T, U>(id: T, name: U): void {
 //   console.log((typeof id + ', ' + typeof name));
 // }
 
 // getInfo<number, string>(1, 'Jane'); // number, string
 
-///////// Generic Function - Non Generic Type Variables ///////// 
+///////// ***** Generic Function - Non Generic Type Variables ***** /////////
 // function displayType<T>(id: T, name: string): void {
 //   console.log(typeof id + ', ' + typeof name);
 // }
 
 // displayType(2, 'Malik'); // number, string
 
-///////// Generic Constraints ///////// 
+///////// ***** Generic Constraints ***** /////////
 // class Customer {
 //   firstName: string;
 //   lastName: string;
@@ -46,7 +46,7 @@
 //       // customerLogger('Jane Doe') results in an compiler error
 //       // customerLogger(1) results in an compiler error - type 1 is not an assignable parameter of Customer Type
 
-///////// Generic Interfaces describing Obj Properties ///////// 
+///////// ***** Generic Interfaces describing Obj Properties ***** /////////
   // An Interface is a group of related properties and methods that describe an object.
   // An Interface does not implement or initialize the object.
 // interface Pair<T, U> {
@@ -60,7 +60,7 @@
 // const person: Pair<string, string> = {first: 'Natasha', second: 'Lutzski'};
 // console.log(person);
 
-///////// Interface Command ///////// 
+///////// ***** Interface Command ***** /////////
 // interface Command<T, R> {
 //   id: T;
 //   run(): R;
@@ -76,7 +76,7 @@
 // console.log(newObj.id);
 // console.log(newObj.run());
 
-///////// Define the Function Type inside the Interface ///////// 
+///////// ***** Define the Function Type inside the Interface ***** /////////
 // interface ElementChecker {
 //   <T>(items: T[], toBeChecked: T, atIndex: number): boolean;
 // }
@@ -96,7 +96,7 @@
 // let b2: boolean = checker<number>(items, 5, 2); // true
 // console.log(b2); 
 
-///////// Interface describing indexable ///////// 
+///////// ***** Interface describing indexable  ***** ///////// 
 // interface States<R> {
 //   [states: string]: R;
 // }
@@ -104,7 +104,7 @@
 // console.log(s);
 // console.log(s['maximized']);
 
-///////// Creating a Generic Class ///////// 
+///////// ***** Creating a Generic Class  ***** /////////
 // class GenericNumber<T> {
 //   zeroValue: T;
 //   add: (x: T, y: T) => T;
@@ -116,7 +116,7 @@
 //   return x + y;
 // };
 
-///////// Creating a Generic Interface with a class ///////// 
+///////// ***** Creating a Generic Interface with a class  ***** /////////
 // interface Collection<T> {
 //   add(t: T): void;
 //   remove(t: T): void;
@@ -150,7 +150,7 @@
 // let numArray = numbers.asArray();
 // console.log(numArray);
 
-///////// Using Decorators ///////// 
+///////// ***** Using Decorators  ***** ///////// 
 // A Decorator is a special kind of deceleration that can be attached to a
 //    class declaration, method, accessor, property, or parameter.
 // Decorators use the form @expression, where expression must evaluate to a function
@@ -168,7 +168,7 @@
 //   }
 // }
 
-// Using Arguments in Method Decorator
+///////// ***** Using Arguments in Method Decorator ***** /////////
 // function log(target, key, descriptor) {
 //   // console.log(target);
 //   const original = descriptor.value;
@@ -197,7 +197,7 @@
 //   //  square with args [3] returned 9
 // calculator.square(3);
 
-///////// Configuring Decorators using Decorator Factory ///////// 
+///////// ***** Configuring Decorators using Decorator Factory  ***** ///////// 
 // function log(title: string) {
 //   return function(target, key, descriptor) {
 //     // console.log(target);
@@ -228,7 +228,7 @@
 //   //  square with args [3] returned 9
 // calculator.square(3);
 
-///////// Using the Property Decorator ///////// 
+///////// ***** Using the Property Decorator ***** ///////// 
 function property(target: any, key: string) {
   let value = target[key];
     // Replacement getter
@@ -241,7 +241,7 @@ function property(target: any, key: string) {
     console.log((`Set ${key} to ${newVal}`));
     value = newVal
   };
-  // Replace the property
+   // Replace the property
   const isDeleted = delete this[key];
   if (isDeleted) {
     // .defineProperty - adds a property to an obj, or modifies attributes of an existing property
@@ -254,13 +254,37 @@ function property(target: any, key: string) {
   }
 }
 
+// class Person {
+//   @property
+//   public firstName: string;
+// }
+// const person = new Person();
+//   // set the firstName
+// person.firstName = 'Haider';
+//   // call the getter
+// console.log(person.firstName);
+
+///////// ***** Using the Parameter Decorator ***** ///////// 
+function parameterDecorator(target: any, key: string, index: number) {
+  console.log(`Key is ${key} and index is ${index}`);
+}
+
 class Person {
   @property
   public firstName: string;
+  @property
+  public salary: number
+
+  calculateSalary(
+    @parameterDecorator taxes: number,
+    @parameterDecorator discount: number
+    ): number {
+    return this.salary * taxes;
+  }
 }
-const person = new Person();
+
+const person = new Person()
   // set the firstName
 person.firstName = 'Haider';
   // call the getter
 console.log(person.firstName);
-
