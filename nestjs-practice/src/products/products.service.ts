@@ -9,4 +9,8 @@ export class ProductsService {
     this.products.push(product)
     return this.products;
   }
+
+  findAll(): Product[] {
+    return this.products;
+  }
 }

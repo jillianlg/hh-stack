@@ -15,6 +15,11 @@ export class ProductsController {
     return this.productService.create(product);
   }
 
+  @Get()
+  async findAll(@Param() params): Promise<Product[]> {
+    return this.productService.findAll();
+  }
+
   @Get('ab*cd')
   findByPattern(): string {
     return 'Find by pattern';

@@ -23,6 +23,9 @@ let ProductsController = class ProductsController {
     async create(product) {
         return this.productService.create(product);
     }
+    async findAll(params) {
+        return this.productService.findAll();
+    }
     findByPattern() {
         return 'Find by pattern';
     }
@@ -43,6 +46,13 @@ __decorate([
     __metadata("design:paramtypes", [create_product_dto_1.CreateProductDTO]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "create", null);
+__decorate([
+    common_1.Get(),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "findAll", null);
 __decorate([
     common_1.Get('ab*cd'),
     __metadata("design:type", Function),

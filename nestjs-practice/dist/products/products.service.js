@@ -16,6 +16,9 @@ let ProductsService = class ProductsService {
         this.products.push(product);
         return this.products;
     }
+    findAll() {
+        return this.products;
+    }
 };
 ProductsService = __decorate([
     common_1.Injectable()
