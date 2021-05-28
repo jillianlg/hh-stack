@@ -1,8 +1,8 @@
+import { ProductsService } from './products.service';
 export declare class ProductsController {
-    create(): string;
-    getDocs(version: any): {
-        url: string;
-    };
+    private productService;
+    constructor(productService: ProductsService);
+    create(): any[];
     findByPattern(): string;
     findById(params: any): string;
     update(): string;

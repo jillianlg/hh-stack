@@ -1186,13 +1186,18 @@
         "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
         "affectsGlobalScope": false
       },
+      "../src/products/products.service.ts": {
+        "version": "42f2a27ff4fadae38f09666bacaf79ce0f8a05b9aaf0d35c792733cecacb902c",
+        "signature": "d8aaeaf4b01a251c228a61caea58309d12473104cb42c99351cffe8a01128d96",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.controller.ts": {
-        "version": "b7d4d3bc76e638f2d21453884375d4451c8a5883ac46cc5faa4faf2bb05e27f9",
-        "signature": "824d43fa7ef57b05b44c3b84bfed9545eacbb4e2e11afc35d5963eec8406032c",
+        "version": "997710a78f1b438b5761e797d83cd48d82a56b6161d73f8fbaacaee330fd8d6f",
+        "signature": "07965cfae69d5400f1147eaf9e4f2d5a0281cfec58fc93757111be9c8cb14159",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
-        "version": "d9a3133683a4eee0fb27555c8459747a37eebe9b7d53b8e0d03dffae637e79a9",
+        "version": "c24967996ff6d53f26c40ffd79ea8f79fa969209bec55df8c786b114bdffd41e",
         "signature": "8857a2a959eb0ee870d0adb812e0d41a0e12796ec0c1d85f8416e82bcf51ca03",
         "affectsGlobalScope": false
       },
@@ -3046,11 +3051,16 @@
         "../src/app.module.ts"
       ],
       "../src/products/products.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/products/products.service.ts"
       ],
       "../src/products/products.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/products/products.controller.ts"
+        "../src/products/products.controller.ts",
+        "../src/products/products.service.ts"
+      ],
+      "../src/products/products.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -4237,6 +4247,9 @@
       ],
       "../src/app.controller.ts": [
         "../src/app.service.ts"
+      ],
+      "../src/products/products.controller.ts": [
+        "../src/products/products.service.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -4603,7 +4616,10 @@
       "../src/app.module.ts",
       "../src/app.service.ts",
       "../src/main.ts",
-      "../src/product/product.controller.ts"
+      "../src/product/product.controller.ts",
+      "../src/products/products.controller.ts",
+      "../src/products/products.module.ts",
+      "../src/products/products.service.ts"
     ]
   },
   "version": "4.2.4"
