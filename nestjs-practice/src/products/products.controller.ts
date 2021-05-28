@@ -8,14 +8,6 @@ export class ProductsController {
     return 'New Product Action';
   }
 
-  @Get('docs')
-  @Redirect('https://docs.nestjs.com', 302)
-  getDocs(@Query('version') version) {
-    if (version && version === '6') {
-      return { url: 'https://docs.nestjs.com/v6/' };
-    }
-  }
-
     @Get('ab*cd')
   findByPattern(): string {
     return 'Find by pattern';
