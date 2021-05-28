@@ -4,4 +4,5 @@ export declare class ProductsService {
     create(product: Product): Product[];
     findAll(): Product[];
     findById(id: string): Product;
+    delete(id: string): Product[];
 }

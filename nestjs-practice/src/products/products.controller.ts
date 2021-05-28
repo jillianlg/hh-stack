@@ -25,6 +25,11 @@ export class ProductsController {
     return this.productService.findById(params.id);
   }
 
+  @Delete(':id')
+  async delete(@Param() params): Promise<Product[]> {
+    return this.productService.delete(params.id);
+  }
+
   // @Get('ab*cd')
   // findByPattern(): string {
   //   return 'Find by pattern';
@@ -35,9 +40,5 @@ export class ProductsController {
   //   return 'Update All';
   // }
 
-  // @Delete()
-  // delete(): string {
-  //   return 'Delete All';
-  // }
 }
 

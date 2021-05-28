@@ -7,4 +7,5 @@ export declare class ProductsController {
     create(product: CreateProductDTO): Promise<Product[]>;
     findAll(params: any): Promise<Product[]>;
     findById(params: any): Promise<Product>;
+    delete(params: any): Promise<Product[]>;
 }

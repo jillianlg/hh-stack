@@ -22,6 +22,11 @@ let ProductsService = class ProductsService {
     findById(id) {
         return this.products.find(p => p.id === id);
     }
+    delete(id) {
+        const index = this.products.findIndex(p => p.id === id);
+        this.products.splice(index, 1);
+        return this.products;
+    }
 };
 ProductsService = __decorate([
     common_1.Injectable()
