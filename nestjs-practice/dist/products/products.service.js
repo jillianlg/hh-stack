@@ -13,7 +13,7 @@ let ProductsService = class ProductsService {
         this.products = [];
     }
     create(product) {
-        return this.products;
+        return product;
     }
 };
 ProductsService = __decorate([

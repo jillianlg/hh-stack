@@ -5,6 +5,6 @@ export class ProductsService {
   products = [];
   //database logic
   create(product) {
-    return this.products;
+    return product;
   }
 }
