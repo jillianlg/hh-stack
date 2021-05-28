@@ -6,8 +6,5 @@ export declare class ProductsController {
     constructor(productService: ProductsService);
     create(product: CreateProductDTO): Promise<Product[]>;
     findAll(params: any): Promise<Product[]>;
-    findByPattern(): string;
-    findById(params: any): string;
-    update(): string;
-    delete(): string;
+    findById(params: any): Promise<Product>;
 }

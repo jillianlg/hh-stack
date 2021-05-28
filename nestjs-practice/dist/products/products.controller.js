@@ -26,17 +26,8 @@ let ProductsController = class ProductsController {
     async findAll(params) {
         return this.productService.findAll();
     }
-    findByPattern() {
-        return 'Find by pattern';
-    }
-    findById(params) {
-        return params;
-    }
-    update() {
-        return 'Update All';
-    }
-    delete() {
-        return 'Delete All';
+    async findById(params) {
+        return this.productService.findById(params.id);
     }
 };
 __decorate([
@@ -54,30 +45,12 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "findAll", null);
 __decorate([
-    common_1.Get('ab*cd'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], ProductsController.prototype, "findByPattern", null);
-__decorate([
     common_1.Get(':id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "findById", null);
-__decorate([
-    common_1.Put(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], ProductsController.prototype, "update", null);
-__decorate([
-    common_1.Delete(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], ProductsController.prototype, "delete", null);
 ProductsController = __decorate([
     common_1.Controller('products'),
     __metadata("design:paramtypes", [products_service_1.ProductsService])

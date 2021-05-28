@@ -20,24 +20,24 @@ export class ProductsController {
     return this.productService.findAll();
   }
 
-  @Get('ab*cd')
-  findByPattern(): string {
-    return 'Find by pattern';
-  }
-
   @Get(':id')
-  findById(@Param() params): string {
-    return params;
+  async findById(@Param() params): Promise<Product> {
+    return this.productService.findById(params.id);
   }
 
-  @Put()
-  update(): string {
-    return 'Update All';
-  }
+  // @Get('ab*cd')
+  // findByPattern(): string {
+  //   return 'Find by pattern';
+  // }
 
-  @Delete()
-  delete(): string {
-    return 'Delete All';
-  }
+  // @Put()
+  // update(): string {
+  //   return 'Update All';
+  // }
+
+  // @Delete()
+  // delete(): string {
+  //   return 'Delete All';
+  // }
 }
 

@@ -19,6 +19,9 @@ let ProductsService = class ProductsService {
     findAll() {
         return this.products;
     }
+    findById(id) {
+        return this.products.find(p => p.id === id);
+    }
 };
 ProductsService = __decorate([
     common_1.Injectable()
