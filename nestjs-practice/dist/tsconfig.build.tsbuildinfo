@@ -1191,14 +1191,19 @@
         "signature": "8c7292d23bcad6d901805cbc59873911c7dc9e42632e5847772c9481fc765d67",
         "affectsGlobalScope": false
       },
+      "../src/products/interfaces/product.interface.ts": {
+        "version": "3fa5eb3e7d70b49116b9074eeb2873d1a6469cb37fd194e76b105f53f80e4139",
+        "signature": "7006c3c1c367d5fdb7e7b26ab608473756c0f96aeb1033a9acd71c58bdb920ff",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.service.ts": {
-        "version": "d7266d57751e154b358b850117d2bc2cc51a41d666691ff8cd93d7e190846eb8",
-        "signature": "d8aaeaf4b01a251c228a61caea58309d12473104cb42c99351cffe8a01128d96",
+        "version": "c2c50f6f299e3ff2853b4022522e23f7bdbf9086f2e00e88eaefa3adb2b0c092",
+        "signature": "6c5d37e4ffb679628b3a3473ea484dd36e994a36b2f493b25deade5256015306",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "e6c29e4eab44bafa438039cbd2928b2151ab7a12c281d1dda2c80096190254e2",
-        "signature": "a62037071c21204a5a4c74a7e61d246500854d8634180a96a49cd89711effbfb",
+        "version": "dfcffadfaa5adc8b5e877aa1217812bd2308d11d8ca6f6489a6d676d7cb97c01",
+        "signature": "de425911662a8cc8798be8f820dffebee37e4cdc14a2f7bce0a8581387b0051a",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
@@ -3058,6 +3063,7 @@
       "../src/products/products.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/products/dto/create-product.dto.ts",
+        "../src/products/interfaces/product.interface.ts",
         "../src/products/products.service.ts"
       ],
       "../src/products/products.module.ts": [
@@ -3066,7 +3072,8 @@
         "../src/products/products.service.ts"
       ],
       "../src/products/products.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/products/interfaces/product.interface.ts"
       ]
     },
     "exportedModulesMap": {
@@ -4256,7 +4263,11 @@
       ],
       "../src/products/products.controller.ts": [
         "../src/products/dto/create-product.dto.ts",
+        "../src/products/interfaces/product.interface.ts",
         "../src/products/products.service.ts"
+      ],
+      "../src/products/products.service.ts": [
+        "../src/products/interfaces/product.interface.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -4625,6 +4636,7 @@
       "../src/main.ts",
       "../src/product/product.controller.ts",
       "../src/products/dto/create-product.dto.ts",
+      "../src/products/interfaces/product.interface.ts",
       "../src/products/products.controller.ts",
       "../src/products/products.module.ts",
       "../src/products/products.service.ts"

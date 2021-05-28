@@ -20,7 +20,7 @@ let ProductsController = class ProductsController {
     constructor(productService) {
         this.productService = productService;
     }
-    create(product) {
+    async create(product) {
         return this.productService.create(product);
     }
     findByPattern() {
@@ -41,7 +41,7 @@ __decorate([
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_product_dto_1.CreateProductDTO]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "create", null);
 __decorate([
     common_1.Get('ab*cd'),
