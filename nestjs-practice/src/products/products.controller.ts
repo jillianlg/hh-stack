@@ -30,15 +30,5 @@ export class ProductsController {
     return this.productService.delete(params.id);
   }
 
-  // @Get('ab*cd')
-  // findByPattern(): string {
-  //   return 'Find by pattern';
-  // }
-
-  // @Put()
-  // update(): string {
-  //   return 'Update All';
-  // }
-
 }
 
