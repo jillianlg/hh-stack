@@ -1,5 +1,6 @@
 /////// ***** Nest.js CRUD route practice ***** //////
-import { Controller, Delete, Get, Param, Post, Put, Query, Redirect } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, Redirect } from '@nestjs/common';
+import { CreateProductDTO } from './dto/create-product.dto';
 import { ProductsService } from './products.service';
 
 @Controller('products')
@@ -8,13 +9,10 @@ export class ProductsController {
     private productService: ProductsService) {}
 
   @Post()
-  create() {
-    return this.productService.create({
-      id: '1',
-      name: 'Macbook Pro',
-      qty: '1',
-      price: '1000'
-    });
+  create(
+    @Body() product : CreateProductDTO
+  ) {
+    return this.productService.create(product);
   }
 
   @Get('ab*cd')

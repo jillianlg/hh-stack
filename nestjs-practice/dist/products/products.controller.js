@@ -14,18 +14,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsController = void 0;
 const common_1 = require("@nestjs/common");
+const create_product_dto_1 = require("./dto/create-product.dto");
 const products_service_1 = require("./products.service");
 let ProductsController = class ProductsController {
     constructor(productService) {
         this.productService = productService;
     }
-    create() {
-        return this.productService.create({
-            id: '1',
-            name: 'Macbook Pro',
-            qty: '1',
-            price: '1000'
-        });
+    create(product) {
+        return this.productService.create(product);
     }
     findByPattern() {
         return 'Find by pattern';
@@ -42,8 +38,9 @@ let ProductsController = class ProductsController {
 };
 __decorate([
     common_1.Post(),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [create_product_dto_1.CreateProductDTO]),
     __metadata("design:returntype", void 0)
 ], ProductsController.prototype, "create", null);
 __decorate([

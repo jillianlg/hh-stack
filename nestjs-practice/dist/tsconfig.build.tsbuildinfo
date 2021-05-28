@@ -1186,14 +1186,19 @@
         "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
         "affectsGlobalScope": false
       },
+      "../src/products/dto/create-product.dto.ts": {
+        "version": "58ea4e23926d39536eafe9a450951db0cca7b81c07184ce0956bb1bca77d4dc6",
+        "signature": "8c7292d23bcad6d901805cbc59873911c7dc9e42632e5847772c9481fc765d67",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.service.ts": {
         "version": "d7266d57751e154b358b850117d2bc2cc51a41d666691ff8cd93d7e190846eb8",
         "signature": "d8aaeaf4b01a251c228a61caea58309d12473104cb42c99351cffe8a01128d96",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "997710a78f1b438b5761e797d83cd48d82a56b6161d73f8fbaacaee330fd8d6f",
-        "signature": "07965cfae69d5400f1147eaf9e4f2d5a0281cfec58fc93757111be9c8cb14159",
+        "version": "e6c29e4eab44bafa438039cbd2928b2151ab7a12c281d1dda2c80096190254e2",
+        "signature": "a62037071c21204a5a4c74a7e61d246500854d8634180a96a49cd89711effbfb",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
@@ -3052,6 +3057,7 @@
       ],
       "../src/products/products.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/products/dto/create-product.dto.ts",
         "../src/products/products.service.ts"
       ],
       "../src/products/products.module.ts": [
@@ -4249,6 +4255,7 @@
         "../src/app.service.ts"
       ],
       "../src/products/products.controller.ts": [
+        "../src/products/dto/create-product.dto.ts",
         "../src/products/products.service.ts"
       ]
     },
@@ -4617,6 +4624,7 @@
       "../src/app.service.ts",
       "../src/main.ts",
       "../src/product/product.controller.ts",
+      "../src/products/dto/create-product.dto.ts",
       "../src/products/products.controller.ts",
       "../src/products/products.module.ts",
       "../src/products/products.service.ts"
