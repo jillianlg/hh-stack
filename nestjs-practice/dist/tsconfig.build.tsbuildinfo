@@ -1187,8 +1187,8 @@
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "ebfee4e701d7eebcb38648e4a206af1ab1751f6fecc142de57cfe0f5e8402d5e",
-        "signature": "81399f43d33156c9be5f36f61699a2a0e11c98f63047653e3d6f418b07d98920",
+        "version": "b7d4d3bc76e638f2d21453884375d4451c8a5883ac46cc5faa4faf2bb05e27f9",
+        "signature": "824d43fa7ef57b05b44c3b84bfed9545eacbb4e2e11afc35d5963eec8406032c",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
@@ -4603,9 +4603,7 @@
       "../src/app.module.ts",
       "../src/app.service.ts",
       "../src/main.ts",
-      "../src/product/product.controller.ts",
-      "../src/products/products.controller.ts",
-      "../src/products/products.module.ts"
+      "../src/product/product.controller.ts"
     ]
   },
   "version": "4.2.4"

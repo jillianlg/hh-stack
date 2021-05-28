@@ -1,11 +1,9 @@
 /////// ***** Nest.js CRUD route practice ***** //////
-import { Controller, Delete, Get, Header, HttpCode, Param, Post, Put, Query, Redirect } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Post, Put, Query, Redirect } from '@nestjs/common';
 
 @Controller('products')
 export class ProductsController {
   @Post()
-  @HttpCode(204)
-  @Header('Authorization', 'Bearer XADSASDASD##$#$ASDSASDAA')
   create(): string {
     return 'New Product Action';
   }
